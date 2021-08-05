@@ -6,6 +6,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 # ** [Optional] Uncomment this section to install additional packages. **
 RUN apt-get update
+RUN apt-get install -y \
+    python3-pip 
 # flask 
 # pip3 with sudo apt-get -y install python3-pip
 #pip3 install flask
