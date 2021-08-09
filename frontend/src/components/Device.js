@@ -1,5 +1,5 @@
-function Device() {
-  return <>test</>;
+function DeviceLayout(props) {
+  return <></>;
 }
 
-export default Device;
+export default DeviceLayout;

@@ -37,6 +37,5 @@ def lectorStart():
     print("client disconected,the socket will restart")
     lectorStart()
 
-lectorStart()
 
 

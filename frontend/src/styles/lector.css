@@ -1,0 +1,133 @@
+.boxDevice{
+    max-width: 500px;
+    margin:30px;
+    position: relative;
+}
+.deviceName{
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+.upBoxDevice{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.configAndStatus{
+    border-radius: 10px 10px 0px 0px;
+    align-self:unset;
+    position:absolute;
+    right: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0px;
+    height: 30px;
+    width: 90px;
+    background-color: #f2f2f2;
+}
+.subBoxDevice{
+    background-color: #f2f2f2;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+
+    border-radius: 10px 0px 10px 10px;
+}
+.settingsBox{
+    padding: 5px;
+}
+.code{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input{
+    display: flex;
+   align-items: center;
+}
+.save-button{
+    width: 24px;
+    height: 24px;
+    padding:0px  0px 0px 10px;
+}
+#fname{
+    display:inline-block;
+    height: 20px;
+}
+
+.stateDevice{
+    width: 20px;
+  margin:5px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #ff6b6b;
+}
+.trigger{
+    margin:10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.statusBox{
+    align-self: center;
+}
+
+.LoadingDevice{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(68, 68, 68, 0.85);
+    border-radius: 10px;
+}
+.OverlayConfig{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 20px;
+    left: 0;
+    background-color: hsla(0,0%,63.5%,.8666666666666667);
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.OverlayBox{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+display: flex;
+flex-direction: column;
+    width: 100%;
+}
+.ConfigBox-elem{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.popupBox{
+    position: relative;
+    margin-top: 40px;
+    max-width: 400px;
+    padding: 40px 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.button1{
+    margin: 3px;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    width: 80px;
+    color: white;
+    background-color: grey;
+}
