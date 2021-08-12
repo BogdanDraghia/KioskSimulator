@@ -4,7 +4,9 @@ import Save from "../images/save.png"
 import Settings from "../images/settings.png"
 import Loading from "../components/Loading"
 import LectorConfig from "./LectorConfig"
+import { useState} from "react"
 const Lector=(props)=> {
+    const [renderDisplay,setRenderDisplay]=useState(false)
     return (
 
         <div className="boxDevice">
@@ -50,7 +52,7 @@ const Lector=(props)=> {
                 </div>  
             </div>
 
-            <LectorConfig/>
+            <LectorConfig renderdisplay={false}/>
         </div>
     )
   }

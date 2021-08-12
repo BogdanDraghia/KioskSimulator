@@ -1,4 +1,6 @@
 .boxDevice{
+
+    width: 100%;
     max-width: 500px;
     margin:30px;
     position: relative;
@@ -10,6 +12,7 @@
     margin-bottom: 5px;
 }
 .upBoxDevice{
+    
     position: relative;
     display: flex;
     align-items: center;

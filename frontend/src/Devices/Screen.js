@@ -1,8 +1,8 @@
 import "../styles/scale.css"
-const Scale= (props) =>{
+const Screen= (props)=> {
     return(<>
-        <div className="Scale-Container">
-            <div className="Scale-subContainer">
+        <div className="Screen-Container">
+            <div className="Screen-subContainer">
                 <div className="button1">Manual</div>
                 <div className="button1">Automatic</div>
 
@@ -12,5 +12,5 @@ const Scale= (props) =>{
     </>)
   }
   
-  export default Scale;
+  export default Screen;
   
