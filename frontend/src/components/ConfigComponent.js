@@ -1,3 +1,5 @@
+import React from 'react';
+
 function ConfigComponent(props) {
     if(props.renderdisplay !== true){
         return null

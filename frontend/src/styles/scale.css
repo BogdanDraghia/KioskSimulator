@@ -14,3 +14,9 @@
     align-items: center;
     justify-content: center;
 }
+.adress{
+    margin:3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,10 +1,10 @@
 
 import "../styles/lector.css"
 import Save from "../images/save.png"
+import React, { useState} from 'react';
 import Settings from "../images/settings.png"
 import Loading from "../components/Loading"
-import LectorConfig from "./LectorConfig"
-import { useState} from "react"
+import LectorConfig from "../components/ConfigComponent"
 const Lector=(props)=> {
     const [renderDisplay,setRenderDisplay]=useState(false)
     return (
