@@ -35,7 +35,7 @@ def lectorStart():
                     break
                 conn.sendall(data)
     print("client disconected,the socket will restart")
-    lectorStart()
+lectorStart()
 
 
 
