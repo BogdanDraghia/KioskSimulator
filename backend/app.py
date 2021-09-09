@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
-from LECTOR import lectorStart
+from devices.lector import lectorStart
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app,cors_allowed_origins="*")
@@ -20,13 +20,20 @@ lectorData  = {
 
 @app.route("/")
 def hello_world():
-    lectorStart()
     return "<p>Hello</p>"
+
+@app.route("/test")
+def hello_world2():
+    lectorStart()
+    return "<p>Hello, World!</p>"
 
 @socketio.on('connect')
 def test_disconnect():
     print('Client connect')
 
+
+
+#lector
 
 @socketio.on('disconnect')
 def test_disconnect():

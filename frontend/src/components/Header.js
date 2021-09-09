@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-const Header=()=> {
+const Header=(props)=> {
     return (
 
         <div className="centerSection">
@@ -7,7 +7,9 @@ const Header=()=> {
                 <div className="version">
                     Kiosk simulator v1.0
                 </div>
+
                 <div className="status"> 
+                <p className="logs"> Ip:{props.ip}</p>
                     <div className="logs">Show logs</div>
                     <p>Status backend</p>
                     <div className="boxStatus"/>
