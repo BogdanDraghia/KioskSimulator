@@ -134,3 +134,9 @@ flex-direction: column;
     color: white;
     background-color: grey;
 }
+.button1:hover{
+    background-color: rgb(54, 54, 54);
+}
+.button1:active{
+    background-color: red;
+}

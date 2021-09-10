@@ -16,14 +16,14 @@ const App= ()=> {
     anpr:true
   })
   console.log(LayoutConfig.scale)
-  // useEffect(() => {
-  //   const socket = socketIOClient("http://127.0.0.1:5000/");
-  //   socket.on("data", (data) => {
+  useEffect(() => {
+    const socket = socketIOClient("http://127.0.0.1:5000/");
+    socket.on("data", (data) => {
       
-  //     console.log("ok")
-  //   });
-  //   return () => socket.disconnect();
-  // }, []);
+      console.log("ok")
+    });
+    return () => socket.disconnect();
+  }, []);
   return (
     <div className="App">
       <Layout>
