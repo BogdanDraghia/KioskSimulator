@@ -32,6 +32,7 @@ def client(conn):
 def lectorStart():
     global connt
     global lectorReading
+    
     print('starting up on {} port {}'.format(*server_address))
     s =socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -39,6 +40,7 @@ def lectorStart():
             # the value tha tis passed to bind() depends on the address family of the socket
             # for AF_INET(IPv4), bind() expects a tuple (host, port)
     s.bind(server_address)
+    lectorReading = True
     s.listen()
     while True:
         conn, addr = s.accept()
@@ -47,16 +49,22 @@ def lectorStart():
 
 
 def sendData(type,code):
-    global lectorReading
-    data ={"message":str(type),"code":str(code)}
-    if(lectorReading):
-        data = str(data).replace("'", '"')
-        for client in CLIENTS.values():
-            client.send(bytes(data, encoding="ascii"))
-        lectorReading= False
-    else:
-        return "LectorNotStarted"
-
+        global lectorReading
+        data ={"message":str(type),"code":str(code)}
+        if(lectorReading):
+            if(CLIENTS):
+                data = str(data).replace("'", '"')
+                for client in CLIENTS.values():
+                    client.send(bytes(data, encoding="ascii"))
+                lectorReading= False
+            else:
+                raise "No Client Connected"
+        elif(type =="TriggerOn"):
+            lectorReading = True
+        elif(type =="TriggerOff"):
+            lectorReading = False
+        else:
+            raise "lector not reading"
 
 
 

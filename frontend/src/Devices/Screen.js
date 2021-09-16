@@ -9,7 +9,7 @@ const Screen= (props)=> {
     const[stateDevice,setStateDevice] =useState(false)
 
     useEffect(() => {
-        const socket = socketIOClient("http://127.0.0.1:8080/");
+        const socket = socketIOClient("http://127.0.0.1:5000/");
         socket.on("data", (data) => {
             setData(data)
             setStateDevice(true)

@@ -31,13 +31,29 @@ const Lector=(props)=> {
             console.log("resssection")
             setDisableButton(false)
             console.log(res)
+        }).catch((err)=>{
+            setDisableButton(false)
+            console.log(err)
         })
 
         
     }
 
+    const switchLector = ()=>{
+        axios.get(`http://127.0.0.1:5000/lectorstart`).then((res)=>{
+            console.log(res)
+            console.log("start")
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
+    
+    let port = "1234"
+    const [overlaySettings,setOverlaySettings] = useState(true)
     const [renderDisplay,setRenderDisplay]=useState(false)
-
+    const overlaySettingsHandler = ()=>{
+        setOverlaySettings(!overlaySettings)
+    }
     return (
 
         <div className="boxDevice">
@@ -45,17 +61,31 @@ const Lector=(props)=> {
                 <Loading/>
             </div> */}
             <div className="upBoxDevice">
-                <div className="deviceName">Lector</div>
+                <div className="deviceName">Lector : {port}</div>
                     <div className="configAndStatus">
                         <div className="stateDevice">
                         
                         </div>
-                        <div className="settingsBox">
+                        {!overlaySettings ? 
+                        <div className="settingsBox" onClick={()=>overlaySettingsHandler()}>
                             <img src={Settings} alt="settings"/>
                         </div>
+                        :<div className="settingsExit" onClick={()=>overlaySettingsHandler()}>
+                            <div className="leftExitSetting"></div>
+                            <div className="rightExitSetting"></div>
+                            </div>
+                        }
                     </div>
             </div>
             <div className="subBoxDevice">
+                {overlaySettings &&  
+                <div className="overlaySettings">
+                    
+                    <div className="controlLectorStatus">
+                        <div className="controlLectorStatusButton" style={{backgroundColor:"#6fd45b"}} onClick={()=>switchLector()}> ON </div>
+                        <div className="controlLectorStatusButton" style={{backgroundColor:"#ff6b6b"}} onClick={()=>switchLector()}> OFF </div>
+                    </div>
+                     </div>}
                 <div className="code">
                     <div>Code </div>
                         <div className="input">
@@ -75,15 +105,15 @@ const Lector=(props)=> {
                 </div>
                 <div className="trigger">
                     <div valrr="bogdan" onClick={(elem)=>console.log(elem.target.getAttribute('valrr'))}>Good Read </div>
-                    <Button disable={disableButton} inactive={disableButton ? "white":"red"} valueLector="GoodRead" >Send</Button>
+                    <Button disable={disableButton} inactive={disableButton ? "white":"#ff6b6b"} valueLector="GoodRead" >Send</Button>
                 </div> 
                 <div className="trigger">
                     <div>Trigger on </div>
-                    <Button disable={disableButton} inactive={disableButton ? "white":"red"} valueLector="TriggerOn" onClick={(elem)=>handleSendData(elem)}>Send</Button>
+                    <Button disable={disableButton} inactive={disableButton ? "white":"#ff6b6b"} valueLector="TriggerOn" onClick={(elem)=>handleSendData(elem)}>Send</Button>
                 </div>    
                 <div className="trigger">
                     <div>Trigger off </div>
-                    <Button disable={disableButton} inactive={disableButton ? "white":"red"} valueLector="TriggerOff" onClick={(elem)=>handleSendData(elem)}>Send</Button>
+                    <Button disable={disableButton} inactive={disableButton ? "white":"#ff6b6b"} valueLector="TriggerOff" onClick={(elem)=>handleSendData(elem)}>Send</Button>
                 </div> 
                 <div className="statusBox">
                     Status lector : Reading 

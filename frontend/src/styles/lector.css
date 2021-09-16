@@ -31,11 +31,12 @@
     background-color: #f2f2f2;
 }
 .subBoxDevice{
+    overflow: hidden;
     background-color: #f2f2f2;
     padding: 15px;
     display: flex;
     flex-direction: column;
-
+    position: relative;
 
     border-radius: 10px 0px 10px 10px;
 }
@@ -124,6 +125,8 @@ flex-direction: column;
     flex-direction: column;
 }
 .button1{
+    border: none;
+background: none;
     margin: 3px;
     font-size: 15px;
     padding: 5px 10px;
@@ -138,5 +141,61 @@ flex-direction: column;
     background-color: rgb(54, 54, 54);
 }
 .button1:active{
-    background-color: red;
+    background-color: #ff6b6b;
+}
+
+.overlaySettings{
+    width: 100%;
+    height: 80%;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.settingsExit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    margin: 5px;
+    height: 20px;
+}
+.rightExitSetting{
+    position: absolute;
+    background-color: #6f6f6f;
+    border-radius: 2px;
+    width: 20px;
+    height: 7px;
+    transform: rotate(
+        45deg);
+}
+.leftExitSetting{
+    border-radius: 2px;
+    position: absolute;
+    background-color: #6f6f6f;
+    width: 20px;
+    height: 7px;
+    transform: rotate(
+        -45deg);
+}
+
+.controlLectorStatus{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controlLectorStatusButton{
+    margin: 10px;
+    font-weight: 700;
+    font-size: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    height: 100px;
+    width: 100px;
+
 }
